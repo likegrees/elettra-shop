@@ -11,7 +11,7 @@ services:
     ports:
       - 8181:80
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: elettradb
       WORDPRESS_DB_USER: elettrashop
       WORDPRESS_DB_PASSWORD: b95598fd6750406bb657508cb10d33a9
       WORDPRESS_DB_NAME: elettrashop
@@ -24,7 +24,7 @@ services:
         source: ./script
         target: /var/www/html/script
     depends_on:
-      - db
+      - elettradb
 
   elettradb:
     image: mariadb:latest

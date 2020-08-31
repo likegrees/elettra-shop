@@ -11,7 +11,7 @@ services:
     ports:
       - 8081:80
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: elettradb
       WORDPRESS_DB_USER: elettrashop
       WORDPRESS_DB_PASSWORD: b95598fd6750406bb657508cb10d33a9
       WORDPRESS_DB_NAME: elettrashop
@@ -28,7 +28,7 @@ services:
       - "traefik.http.routers.elettra.rule=Host(`shop.elettraroboticslab.it`)"
       - "traefik.http.routers.elettra.entrypoints=web"
     depends_on:
-      - db
+      - elettradb
     networks:
       - traefik
 
