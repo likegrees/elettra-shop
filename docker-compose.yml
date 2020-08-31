@@ -1,0 +1,46 @@
+version: '3.3'
+
+services:
+
+  elettrashop:
+    container_name: elettrashop-src
+    build:
+      context: ./services
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 8181:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: elettrashop
+      WORDPRESS_DB_PASSWORD: b95598fd6750406bb657508cb10d33a9
+      WORDPRESS_DB_NAME: elettrashop
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+    volumes:
+      - type: bind
+        source: ./elettrashop-src
+        target: /var/www/html
+      - type: bind
+        source: ./script
+        target: /var/www/html/script
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:latest
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: elettrashop
+      MYSQL_USER: elettrashop
+      MYSQL_PASSWORD: b95598fd6750406bb657508cb10d33a9
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - type: bind
+        source: ./db
+        target: /var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
