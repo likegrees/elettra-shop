@@ -8,6 +8,8 @@ services:
       context: ./services
       dockerfile: ./Dockerfile
     restart: always
+    ports:
+      - 8081:80
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: elettrashop
