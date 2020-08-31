@@ -1,0 +1,12 @@
+/.idea/
+/db/elettrashop/
+/db/mysql/
+/db/performance_schema/
+/db/aria_log.00000001
+/db/aria_log_control
+/db/ib_buffer_pool
+/db/ib_logfile0
+/db/ibdata1
+/db/ibtmp1
+/db/multi-master.info
+*/db/.gitkeep
