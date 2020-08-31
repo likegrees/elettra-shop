@@ -23,8 +23,8 @@ services:
         target: /var/www/html/script
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`shop.elettraroboticslab.it`)"
-      - "traefik.http.routers.whoami.entrypoints=web"
+      - "traefik.http.routers.elettra.rule=Host(`shop.elettraroboticslab.it`)"
+      - "traefik.http.routers.elettra.entrypoints=web"
     depends_on:
       - db
     networks:
