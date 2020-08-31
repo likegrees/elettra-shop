@@ -29,7 +29,7 @@ define( 'DB_USER', 'elettrashop');
 define( 'DB_PASSWORD', 'b95598fd6750406bb657508cb10d33a9');
 
 /** MySQL hostname */
-define( 'DB_HOST', 'elettradb:3307');
+define( 'DB_HOST', 'elettradb');
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8');

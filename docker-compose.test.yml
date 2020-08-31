@@ -36,7 +36,7 @@ services:
     image: mariadb:latest
     restart: always
     ports:
-      - 3307:3307
+      - 3307:3306
     environment:
       MYSQL_DATABASE: elettrashop
       MYSQL_USER: elettrashop
