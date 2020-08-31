@@ -26,7 +26,7 @@ services:
     depends_on:
       - db
 
-  db:
+  elettradb:
     image: mariadb:latest
     restart: always
     ports:
