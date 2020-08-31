@@ -48,6 +48,26 @@ services:
         target: /var/lib/mysql
     networks:
       - traefik
+      -
+  ftpd_server:
+    image: stilliard/pure-ftpd
+    container_name: pure-ftpd
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    volumes:
+      - type: bind
+        source: ./elettrashop-src
+        target: /home/username/
+      - type: bind
+        source: ./passwd
+        target: /etc/pure-ftpd/passwd
+    environment:
+      PUBLICHOST: "163.172.161.85"
+      FTP_USER_NAME: elettra
+      FTP_USER_PASS: Andromed4
+      FTP_USER_HOME: /home/username
+    restart: always
 
 networks:
   traefik:
